@@ -50,7 +50,7 @@
     "@sushiswap/stargate": "workspace:*",
     "@sushiswap/sushiswap": "workspace:*",
     "@sushiswap/typescript-config": "workspace:*",
-    "@tenderly/hardhat-tenderly": "^1.0.13",
+    "@tenderly/hardhat-tenderly": "^1.1.4",
     "@types/node": "^17.0.33",
     "ethers": "^5.0.0",
     "hardhat": "^2.9.5",

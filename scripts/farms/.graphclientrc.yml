@@ -1,0 +1,37 @@
+sources:
+  - name: Trident
+    handler:
+      graphql:
+        endpoint: https://{context.subgraphHost:api.thegraph.com/subgraphs/name}/{context.name:sushi-labs/trident-optimism}
+    transforms:
+      - prefix:
+          value: Trident_
+          includeRootOperations: true
+          includeTypes: true
+      - autoPagination:
+          validateSchema: true
+  - name: Exchange
+    handler:
+      graphql:
+        endpoint: https://{context.subgraphHost:api.thegraph.com/subgraphs/name}/{context.name:sushiswap/exchange-ethereum}
+    transforms:
+      - prefix:
+          value: Exchange_
+          includeRootOperations: true
+          includeTypes: true
+      - autoPagination:
+          validateSchema: true
+  - name: Kashi
+    handler:
+      graphql:
+        endpoint: https://{context.subgraphHost:api.thegraph.com/subgraphs/name}/{context.name:sushiswap/exchange-ethereum}
+    transforms:
+      - prefix:
+          value: Exchange_
+          includeRootOperations: true
+          includeTypes: true
+      - autoPagination:
+          validateSchema: true
+
+documents:
+  - ./query.graphql

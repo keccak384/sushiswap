@@ -1,0 +1,48 @@
+query ExchangeTokens($first: Int = 100000, $skip: Int = 0, $where: Exchange_Token_filter, $block: Exchange_Block_height) {
+  Exchange_tokens(first: $first, skip: $skip, where: $where, block: $block) {
+    id
+    liquidity
+    derivedETH
+  }
+
+  Exchange_bundle(id: 1, block: $block) {
+    ethPrice
+  }
+}
+
+query ExchangePairs($first: Int = 100000, $skip: Int = 0, $where: Exchange_Pair_filter, $block: Exchange_Block_height) {
+  Exchange_pairs(first: $first, skip: $skip, where: $where, block: $block) {
+    id
+    totalSupply
+    volumeUSD
+    reserveUSD
+    trackedReserveETH
+  }
+}
+
+
+query TridentTokens($first: Int = 100000, $skip: Int = 0, $where: Trident_Token_filter, $block: Trident_Block_height) {
+  Trident_tokens(first: $first, skip: $skip, where: $where, block: $block) {
+    id
+    kpi {
+      liquidity
+    }
+    price {
+      derivedNative
+    }
+  }
+
+  Trident_bundle(id: 1, block: $block) {
+    nativePrice
+  }
+}
+
+query TridentPairs($first: Int = 100000, $skip: Int = 0, $where: Trident_Pair_filter, $block: Trident_Block_height) {
+  Trident_pairs(first: $first, skip: $skip, where: $where, block: $block) {
+    id
+    volumeNative
+    liquidity
+    liquidityNative
+    apr
+  }
+}

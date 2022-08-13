@@ -1,0 +1,13 @@
+{
+  "extends": "@sushiswap/typescript-config/node16.json",
+  "include": [".graphclient", "src"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "resolveJsonModule": true
+  },
+  "resolveJsonModule": true
+}
